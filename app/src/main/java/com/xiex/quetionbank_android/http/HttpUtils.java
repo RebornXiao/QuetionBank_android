@@ -1,4 +1,4 @@
-package com.xiex.quetionbank_android;
+package com.xiex.quetionbank_android.http;
 
 import org.xutils.http.RequestParams;
 

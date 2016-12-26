@@ -1,4 +1,4 @@
-package com.xiex.quetionbank_android.UI;
+package com.xiex.quetionbank_android.ui;
 
 import android.app.Activity;
 

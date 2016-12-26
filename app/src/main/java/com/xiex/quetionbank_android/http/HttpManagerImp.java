@@ -1,4 +1,4 @@
-package com.xiex.quetionbank_android;
+package com.xiex.quetionbank_android.http;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -24,7 +24,7 @@ import static com.xiex.quetionbank_android.Config.url;
 public class HttpManagerImp {
 
     private static HttpManagerImp instance;
-    private BaseRespon errorBack = new BaseRespon(1, "错误");
+    private com.xiex.quetionbank_android.BaseRespon errorBack = new com.xiex.quetionbank_android.BaseRespon(1, "错误");
     private Handler handler = new Handler(Looper.getMainLooper());
 
     private HttpManagerImp() {
@@ -43,18 +43,18 @@ public class HttpManagerImp {
 
     @NonNull
     private RequestParams setRequest() {
-        BaseReque baseReque = new BaseReque(Methods.GETALLQUESTION);
+        com.xiex.quetionbank_android.BaseReque baseReque = new com.xiex.quetionbank_android.BaseReque(com.xiex.quetionbank_android.Methods.GETALLQUESTION);
         String body = JSON.toJSONString(baseReque);
-        MLog.e("请求参数=" + url + body);
+        com.xiex.quetionbank_android.MLog.e("请求参数=" + url + body);
         String url = null;
 //        url = Config.url + body;
         body = "?content=" + body;
         try {
-            url = url + URLEncoder.encode(body, Config.UTF_8);
+            url = url + URLEncoder.encode(body, com.xiex.quetionbank_android.Config.UTF_8);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        MLog.e("请求参数=" + url);
+        com.xiex.quetionbank_android.MLog.e("请求参数=" + url);
         RequestParams params = new RequestParams(url);
 //        params.addParameter("content",body);
         params.setCacheMaxAge(2000);
@@ -63,11 +63,11 @@ public class HttpManagerImp {
     }
 
     public void getData(Object t, DataCallBack callBack) {
-        BaseReque baseReque = new BaseReque(Methods.GETALLQUESTION);
+        com.xiex.quetionbank_android.BaseReque baseReque = new com.xiex.quetionbank_android.BaseReque(com.xiex.quetionbank_android.Methods.GETALLQUESTION);
         baseReque.setDetail(t);
         String body = JSON.toJSONString(baseReque);
-        String url = Config.url + body;
-        MLog.e("请求参数=" + url);
+        String url = com.xiex.quetionbank_android.Config.url + body;
+        com.xiex.quetionbank_android.MLog.e("请求参数=" + url);
         doNetJob(url, callBack);
     }
 
@@ -80,8 +80,8 @@ public class HttpManagerImp {
 
                         @Override
                         public void onRequestComplete(final String result) {
-                            MLog.e(result);
-                            final BaseRespon baseRespon = JSON.parseObject(result, BaseRespon.class);
+                            com.xiex.quetionbank_android.MLog.e(result);
+                            final com.xiex.quetionbank_android.BaseRespon baseRespon = JSON.parseObject(result, com.xiex.quetionbank_android.BaseRespon.class);
                             if (callBack != null) {
                                 handler.post(new Runnable() {
                                     @Override
