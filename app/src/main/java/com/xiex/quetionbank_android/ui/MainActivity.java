@@ -16,6 +16,9 @@ import com.xiex.quetionbank_android.http.DataCallBack;
 import com.xiex.quetionbank_android.http.HttpManagerImp;
 import com.xiex.quetionbank_android.ui.adapter.MainViewPagerAdapter;
 import com.xiex.quetionbank_android.ui.view.QuestionListView;
+import com.xiex.quetionbank_android.ui.view.QuestionTypeView;
+import com.xiex.quetionbank_android.ui.view.QuestionTeacherView;
+import com.xiex.quetionbank_android.ui.view.QuestionMyView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,12 +56,32 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
         List<View> list = new ArrayList<>();
         final QuestionListView questionListView = new QuestionListView(MainActivity.this);
+        QuestionTypeView questionListView2 = new QuestionTypeView(MainActivity.this);
+        QuestionTeacherView questionListView3 = new QuestionTeacherView(MainActivity.this);
+        QuestionMyView questionListView4 = new QuestionMyView(MainActivity.this);
         list.add(questionListView);
-        list.add(questionListView);
-        list.add(questionListView);
-        list.add(questionListView);
+        list.add(questionListView2);
+        list.add(questionListView3);
+        list.add(questionListView4);
         mainViewPagerAdapter = new MainViewPagerAdapter(list);
         vpMainCenter.setAdapter(mainViewPagerAdapter);
+        vpMainCenter.setCurrentItem(0);
+        vpMainCenter.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         HttpManagerImp.getInstance().getData(null, new DataCallBack() {
 
             @Override

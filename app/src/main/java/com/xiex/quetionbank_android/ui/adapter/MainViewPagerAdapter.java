@@ -38,12 +38,12 @@ public class MainViewPagerAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView((View) object);
+        container.removeView(list.get(position));
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        container.addView(list.get(position));
+        container.addView(list.get(position),0);
         return list.get(position);
     }
 

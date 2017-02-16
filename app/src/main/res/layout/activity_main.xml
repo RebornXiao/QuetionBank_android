@@ -11,8 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_alignParentTop="true"
-        android:background="@android:color/holo_green_light"
-        />
+        android:background="#f0f0f0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="题库大讲堂"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"/>
+
+    </RelativeLayout>
 
     <RadioGroup
         android:id="@+id/rg_main_bottom"
@@ -54,8 +63,8 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_main_center"
         android:layout_width="match_parent"
-android:layout_above="@+id/rg_main_bottom"
         android:layout_height="match_parent"
+        android:layout_above="@+id/rg_main_bottom"
         android:layout_below="@+id/rl_main_top">
 
 
