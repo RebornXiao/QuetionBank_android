@@ -1,6 +1,7 @@
 package com.question.ui.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
 /**
@@ -10,10 +11,11 @@ import android.os.Bundle;
  */
 
 public class BaseActivity extends Activity {
+    protected Context mContext ;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        mContext = BaseActivity.this;
 
     }
 

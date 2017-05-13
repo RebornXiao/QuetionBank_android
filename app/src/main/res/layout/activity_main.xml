@@ -26,37 +26,29 @@
     <RadioGroup
         android:id="@+id/rg_main_bottom"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         >
 
-        <CheckBox
+        <RadioButton
             android:id="@+id/cb_main_1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            style="@style/bottombar"
             android:background="@android:color/black"/>
 
-        <CheckBox
+        <RadioButton
             android:id="@+id/cb_main_2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            style="@style/bottombar"
             android:background="@android:color/holo_red_dark"/>
 
-        <CheckBox
+        <RadioButton
             android:id="@+id/cb_main_3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            style="@style/bottombar"
             android:background="@android:color/holo_orange_dark"/>
 
-        <CheckBox
+        <RadioButton
             android:id="@+id/cb_main_4"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            style="@style/bottombar"
             android:background="@android:color/holo_blue_dark"/>
     </RadioGroup>
 
@@ -66,7 +58,6 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/rg_main_bottom"
         android:layout_below="@+id/rl_main_top">
-
 
     </android.support.v4.view.ViewPager>
 

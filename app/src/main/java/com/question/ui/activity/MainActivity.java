@@ -48,6 +48,9 @@ public class MainActivity extends BaseActivity {
     private List<QuestionContent> questionContents;
     private MainViewPagerAdapter mainViewPagerAdapter;
     private QuestionListView questionListView;
+    private QuestionTypeView questionTypeView;
+    private QuestionTeacherView questionTeacherView;
+    private QuestionMyView questionMyView;
 //    private MyAdapter adapter;
 
     @Override
@@ -56,10 +59,10 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         List<View> list = new ArrayList<>();
-        questionListView = new QuestionListView(MainActivity.this);
-        QuestionTypeView questionTypeView = new QuestionTypeView(MainActivity.this);
-        QuestionTeacherView questionTeacherView = new QuestionTeacherView(MainActivity.this);
-        QuestionMyView questionMyView = new QuestionMyView(MainActivity.this);
+        questionListView = new QuestionListView(mContext);
+        questionTypeView = new QuestionTypeView(mContext);
+        questionTeacherView = new QuestionTeacherView(mContext);
+        questionMyView = new QuestionMyView(mContext);
         list.add(questionListView);
         list.add(questionTypeView);
         list.add(questionTeacherView);
