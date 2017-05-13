@@ -7,7 +7,7 @@ package com.question.cfg;
  */
 
 public class Config {
-    public static final String url = "http://192.168.1.86:8080/qb/i/c.action?content=";
+    public static final String url = "http://192.168.1.110:8080/qb/i/c.action?content=";
 
     public final static String UTF_8 = "utf-8";
 }

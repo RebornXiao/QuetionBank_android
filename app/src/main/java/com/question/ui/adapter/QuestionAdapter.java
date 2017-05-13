@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.xiex.quetionbank_android.R;
+import com.question.R;
 import com.question.data.QuestionContent;
 
 import java.util.List;

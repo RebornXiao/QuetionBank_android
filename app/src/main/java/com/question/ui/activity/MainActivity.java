@@ -9,6 +9,7 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
 import com.alibaba.fastjson.JSON;
+import com.question.R;
 import com.question.data.QuestionContent;
 import com.question.http.DataCallBack;
 import com.question.http.HttpManagerImp;

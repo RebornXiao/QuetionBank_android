@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.xiex.quetionbank_android.R;
+import com.question.R;
 import com.question.data.QuestionContent;
 import com.question.ui.adapter.QuestionAdapter;
 
