@@ -1,4 +1,4 @@
-package com.xiex.quetionbank_android.ui.adapter;
+package com.question.ui.adapter;
 
 import android.support.v4.view.PagerAdapter;
 import android.view.View;

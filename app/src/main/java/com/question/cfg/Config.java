@@ -1,4 +1,4 @@
-package com.xiex.quetionbank_android;
+package com.question.cfg;
 
 /**
  * Created by baby on 2016/12/25.
@@ -7,8 +7,7 @@ package com.xiex.quetionbank_android;
  */
 
 public class Config {
-    public static final String url = "http://192.168.1.117:8080/qb/i/c.action?content=";
-
+    public static final String url = "http://192.168.1.86:8080/qb/i/c.action?content=";
 
     public final static String UTF_8 = "utf-8";
 }

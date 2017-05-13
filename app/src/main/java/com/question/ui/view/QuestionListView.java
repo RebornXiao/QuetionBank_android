@@ -1,4 +1,4 @@
-package com.xiex.quetionbank_android.ui.view;
+package com.question.ui.view;
 
 
 import android.content.Context;
@@ -9,8 +9,8 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import com.xiex.quetionbank_android.R;
-import com.xiex.quetionbank_android.data.QuestionContent;
-import com.xiex.quetionbank_android.ui.adapter.QuestionAdapter;
+import com.question.data.QuestionContent;
+import com.question.ui.adapter.QuestionAdapter;
 
 import java.util.List;
 
@@ -20,7 +20,7 @@ import java.util.List;
  * 宜步出行，天天速达
  */
 
-public class QuestionMyView extends RelativeLayout {
+public class QuestionListView extends RelativeLayout {
     private Context context;
     private ListView lv_main_question;
     private List<QuestionContent> questionContents;
@@ -34,18 +34,18 @@ public class QuestionMyView extends RelativeLayout {
         adapter.setQuestionContents(questionContents);
     }
 
-    public QuestionMyView(Context context) {
+    public QuestionListView(Context context) {
         super(context);
         adapter = new QuestionAdapter(context);
         init(context);
     }
 
-    public QuestionMyView(Context context, AttributeSet attrs) {
+    public QuestionListView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public QuestionMyView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public QuestionListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }

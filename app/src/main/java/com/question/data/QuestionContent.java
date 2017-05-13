@@ -1,4 +1,4 @@
-package com.xiex.quetionbank_android.data;
+package com.question.data;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.xiex.quetionbank_android.ui;
+package com.question.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -9,16 +9,15 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
 import com.alibaba.fastjson.JSON;
-import com.xiex.quetionbank_android.MLog;
-import com.xiex.quetionbank_android.R;
-import com.xiex.quetionbank_android.data.QuestionContent;
-import com.xiex.quetionbank_android.http.DataCallBack;
-import com.xiex.quetionbank_android.http.HttpManagerImp;
-import com.xiex.quetionbank_android.ui.adapter.MainViewPagerAdapter;
-import com.xiex.quetionbank_android.ui.view.QuestionListView;
-import com.xiex.quetionbank_android.ui.view.QuestionTypeView;
-import com.xiex.quetionbank_android.ui.view.QuestionTeacherView;
-import com.xiex.quetionbank_android.ui.view.QuestionMyView;
+import com.question.data.QuestionContent;
+import com.question.http.DataCallBack;
+import com.question.http.HttpManagerImp;
+import com.question.ui.adapter.MainViewPagerAdapter;
+import com.question.ui.view.QuestionListView;
+import com.question.ui.view.QuestionMyView;
+import com.question.ui.view.QuestionTeacherView;
+import com.question.ui.view.QuestionTypeView;
+import com.question.utils.MLog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,22 +46,23 @@ public class MainActivity extends BaseActivity {
     private ListView lv;
     private List<QuestionContent> questionContents;
     private MainViewPagerAdapter mainViewPagerAdapter;
+    private QuestionListView questionListView;
 //    private MyAdapter adapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         List<View> list = new ArrayList<>();
-        final QuestionListView questionListView = new QuestionListView(MainActivity.this);
-        QuestionTypeView questionListView2 = new QuestionTypeView(MainActivity.this);
-        QuestionTeacherView questionListView3 = new QuestionTeacherView(MainActivity.this);
-        QuestionMyView questionListView4 = new QuestionMyView(MainActivity.this);
+        questionListView = new QuestionListView(MainActivity.this);
+        QuestionTypeView questionTypeView = new QuestionTypeView(MainActivity.this);
+        QuestionTeacherView questionTeacherView = new QuestionTeacherView(MainActivity.this);
+        QuestionMyView questionMyView = new QuestionMyView(MainActivity.this);
         list.add(questionListView);
-        list.add(questionListView2);
-        list.add(questionListView3);
-        list.add(questionListView4);
+        list.add(questionTypeView);
+        list.add(questionTeacherView);
+        list.add(questionMyView);
         mainViewPagerAdapter = new MainViewPagerAdapter(list);
         vpMainCenter.setAdapter(mainViewPagerAdapter);
         vpMainCenter.setCurrentItem(0);
@@ -94,7 +94,6 @@ public class MainActivity extends BaseActivity {
             public void onGetError(String data) {
                 MLog.e("错误：" + data.toString());
             }
-
         });
     }
 

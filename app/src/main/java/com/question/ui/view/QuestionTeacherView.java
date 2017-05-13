@@ -1,4 +1,4 @@
-package com.xiex.quetionbank_android.ui.view;
+package com.question.ui.view;
 
 
 import android.content.Context;
@@ -9,8 +9,8 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import com.xiex.quetionbank_android.R;
-import com.xiex.quetionbank_android.data.QuestionContent;
-import com.xiex.quetionbank_android.ui.adapter.QuestionAdapter;
+import com.question.data.QuestionContent;
+import com.question.ui.adapter.QuestionAdapter;
 
 import java.util.List;
 
